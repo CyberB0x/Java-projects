@@ -1,0 +1,19 @@
+import java.io.IOException;
+import java.net.*;
+
+//How to verify if a string in java is a valid url
+
+public class Main {
+    public static void main(String[] args) {
+        String input = "https://www.google.com";
+        try {
+            URL url = new URL(input);
+            URLConnection connection = url.openConnection();
+            connection.connect();
+            System.out.println("Valid URL");
+        } catch (IOException e) {
+            System.out.println("Invalid URL");
+        }
+    }
+}
+
