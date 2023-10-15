@@ -1,0 +1,56 @@
+/**
+ * @author Arslonbek Erkinov
+ * ООП - Перегрузка
+ */
+public class Main {
+    public static void main(String[] args) {
+        printResult(2,3, "8");
+    }
+
+    public static void printResult(int a, int b, String value) {
+        System.out.println("Заполняем обектами String");
+        printResult(a, b, (Object) value);
+    }
+    public static void printResult(int a, int b, Integer value) {
+        System.out.println("Заполняем обектами String");
+        printResult(a, b, (Object) value);
+    }
+    public static void printResult(int a, int b, double value) {
+        System.out.println("Заполняем обектами String");
+        printResult(a, b, (Object) value);
+    }
+    public static void printResult(int a, int b, float value) {
+        System.out.println("Заполняем обектами String");
+        printResult(a, b, (Object) value);
+    }
+    public static void printResult(int a, int b, long value) {
+        System.out.println("Заполняем обектами String");
+        printResult(a, b, (Object) value);
+    }
+    public static void printResult(int a, int b, boolean value) {
+        System.out.println("Заполняем обектами String");
+        printResult(a, b, (Object) value);
+    }
+    public static void printResult(int a, int b, short value) {
+        System.out.println("Заполняем обектами String");
+        printResult(a, b, (Object) value);
+    }
+    public static void printResult(int a, int b, char value) {
+        System.out.println("Заполняем обектами String");
+        printResult(a, b, (Object) value);
+    }
+    public static void printResult(int a, int b, byte value) {
+        System.out.println("Заполняем обектами String");
+        printResult(a, b, (Object) value);
+    }
+
+    public static void printResult(int a, int b, Object value){
+        for (int i = 0; i < a; i++) {
+            for (int j = 0; j < b; i++) {
+                System.out.println(value);
+            }
+            System.out.println();
+        }
+    }
+
+}
