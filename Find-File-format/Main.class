@@ -1,0 +1,29 @@
+package com.antispambo.arslonbek;
+
+import java.util.Scanner;
+
+/**
+ * @author Arslonbek Erkinov
+ */
+
+public class Main {
+
+    public static void main(String[] args) {
+        //Проверяет, что это за файл по его расширению
+        //Чтение с консоли
+        Scanner UserFile = new Scanner(System.in);
+        String PathFile = UserFile.nextLine();
+
+        //Проверяем, что строка PathFile оканчиватся
+        //на заданную строку
+        if (PathFile.endsWith(".jpg") || PathFile.endsWith(".jpeg")) {
+            System.out.println("This is Jpeg File!");
+        } else if (PathFile.endsWith(".htm") || PathFile.endsWith(".html")) {
+            System.out.println("This is HTML File!");
+        } else if (PathFile.endsWith(".doc") || PathFile.endsWith(".docx")) {
+            System.out.println("This is Word File!");
+        } else {
+            System.out.println("Invalid File");
+        }
+    }
+}
