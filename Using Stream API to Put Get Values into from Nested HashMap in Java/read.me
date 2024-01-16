@@ -1,0 +1,42 @@
+Использование Stream API для помещения/получения значений в/из вложенного HashMap в Java
+
+Использование Stream API
+
+Вот пример фрагмента кода, который демонстрирует, как помещать/получать значения во вложенный HashMap/из него с помощью Stream API в Java:
+
+package com.antispambo.arslonbek;
+
+
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * @author Arslonbek Erkinov
+ */
+
+public class Main {
+    /**
+     * поместить/получить значения во вложенную хэш-карту/из нее в Java
+     */
+    public static void main(String[] args) {
+        //Использование Stream API
+
+        Map<String, Map<String, Integer>> nestedMap = new HashMap<>();
+
+        nestedMap.computeIfAbsent("Key1", k -> new HashMap<>()).put("key2",10);
+
+        int value = nestedMap.getOrDefault("Key1", new HashMap<>()).getOrDefault("key2", 0);
+
+        System.out.println("Value: " + value);
+
+
+    }
+}
+
+В приведенном выше примере мы сначала создаем вложенный HashMap с именем nestedMap. Затем мы используем этот computeIfAbsent()метод для помещения значения 10во вложенный HashMap с помощью ключей "key1"и "key2". 
+Наконец, мы используем getOrDefault()метод для получения значения из вложенного HashMap с помощью ключей "key1"и "key2". Если значение не существует, мы возвращаем значение по умолчанию — 0.
+
+Обратите внимание, что этот computeIfAbsent()метод используется для добавления новой пары ключ-значение во вложенный HashMap, только если ключ еще не существует. 
+Если ключ уже существует, метод возвращает существующее значение. Это полезно для предотвращения исключений нулевого указателя при работе с вложенными HashMaps.
+
+Таким образом, Stream API предоставляет краткий и эффективный способ помещения/получения значений во вложенные HashMaps/из них в Java.
